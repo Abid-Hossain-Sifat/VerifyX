@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { User } from 'lucide-react';
+import { User, ShieldCheck } from 'lucide-react';
 
 interface NavbarProps {
   username?: string;
@@ -10,33 +10,24 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ username = 'Alex Mercer' }) => {
   return (
-    <header className="w-full border-b border-[#1E293B]/60 bg-[#07090E]/90 backdrop-blur-md sticky top-0 z-50">
+    <header className="w-full border-b border-white/[0.08] bg-white/[0.02] backdrop-blur-2xl backdrop-saturate-150 sticky top-0 z-50 shadow-[0_4px_30px_rgba(0,0,0,0.3),inset_0_-1px_0_rgba(255,255,255,0.05)]">
       <div className="max-w-[80%] mx-auto py-3.5 flex items-center justify-between gap-4">
         
         {/* Left: Brand / Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <span className="text-[#00F5D4] font-mono text-sm tracking-tighter">—</span>
+        <Link href="/" className="flex items-center gap-2.5 group">
+          <ShieldCheck className="w-5 h-5 text-[#00F5D4] drop-shadow-[0_0_8px_rgba(0,245,212,0.6)] group-hover:scale-110 transition-transform duration-200" />
           <span className="text-base font-extrabold tracking-wider text-white font-mono">
             VERIFY<span className="text-[#00F5D4]">X</span>
           </span>
-          <span className="text-[10px] font-mono tracking-wider text-cyan-300 border border-cyan-500/40 rounded px-1.5 py-0.5 bg-cyan-950/40 uppercase">
+          <span className="text-[10px] font-mono tracking-wider text-cyan-300 border border-cyan-500/30 rounded-md px-1.5 py-0.5 bg-cyan-950/30 uppercase">
             VERIFY
           </span>
         </Link>
 
-        {/* Center: System Status Pill */}
-        <div className="hidden md:flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#0C111C] border border-[#1E2A3C] shadow-inner text-[11px] font-mono tracking-wider text-slate-300">
-          <span className="w-2 h-2 rounded-full bg-[#00F5D4] shadow-[0_0_8px_#00F5D4] animate-pulse" />
-          <span className="text-slate-400">SYSTEM STATUS:</span>
-          <span className="text-cyan-400 font-semibold">OPERATIONAL</span>
-          <span className="text-slate-600">—</span>
-          <span className="text-slate-400">E2E ENCRYPTED</span>
-        </div>
-
         {/* Right: Username Profile Display */}
         <div className="flex items-center gap-3">
-          <div className="flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#0C121F] border border-cyan-500/30 hover:border-cyan-400/60 transition-all shadow-[0_0_12px_rgba(0,245,212,0.1)] cursor-pointer">
-            <div className="relative flex items-center justify-center w-7 h-7 rounded-full bg-cyan-950/60 border border-cyan-400/40 text-[#00F5D4]">
+          <div className="flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 backdrop-blur-md hover:bg-white/[0.08] hover:border-white/20 transition-all shadow-[inset_0_1px_1px_rgba(255,255,255,0.15)] cursor-pointer">
+            <div className="relative flex items-center justify-center w-7 h-7 rounded-full bg-white/[0.08] border border-white/15 text-[#00F5D4]">
               <User className="w-4 h-4" />
               <span className="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-[#00F5D4] ring-2 ring-[#07090E] animate-pulse" />
             </div>

@@ -1,12 +1,5 @@
-import Footer from "@/Components/Footer";
-import Navbar from "@/Components/Navbar";
-import Image from "next/image";
+import LoginPage from './login/page';
 
 export default function Home() {
-  return (
-    <>
-      <Navbar></Navbar>
-      <Footer></Footer>
-    </>
-  );
+  return <LoginPage />;
 }
