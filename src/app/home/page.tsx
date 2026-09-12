@@ -14,10 +14,10 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col justify-between">
+    <div className="min-h-screen flex flex-col justify-between overflow-x-hidden">
       <Navbar username="Alex Mercer" />
 
-      <main className="flex-1 flex items-center justify-center px-4 py-12">
+      <main className="flex-1 flex items-center justify-center px-4 py-6 sm:py-8">
         <Home 
           user={{
             name: 'Alex Mercer',
